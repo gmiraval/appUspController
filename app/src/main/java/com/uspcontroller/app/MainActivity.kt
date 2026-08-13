@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import com.uspcontroller.app.ui.screens.DashboardScreen
 import com.uspcontroller.app.ui.theme.UspControllerTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,7 +21,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    // DashboardScreen will be added in Phase 9
+                    DashboardScreen()
                 }
             }
         }
