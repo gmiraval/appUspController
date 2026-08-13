@@ -13,8 +13,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
-import javax.inject.Singleton
 
 /**
  * Discovers USP Agents on the local network using mDNS/DNS-SD (Android NsdManager).
@@ -32,8 +30,7 @@ import javax.inject.Singleton
  * Handles: deduplication by endpoint ID, resolution failures, missing TXT fields,
  * multicast lock acquisition/release, and 10-second timeout.
  */
-@Singleton
-class MdnsDiscoveryService @Inject constructor(
+class MdnsDiscoveryService(
     private val context: Context,
     private val coroutineScope: CoroutineScope
 ) {

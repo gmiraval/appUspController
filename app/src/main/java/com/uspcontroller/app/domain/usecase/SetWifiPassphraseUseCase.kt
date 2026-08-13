@@ -3,7 +3,6 @@ package com.uspcontroller.app.domain.usecase
 import com.uspcontroller.app.data.repository.UspRepository
 import com.uspcontroller.app.domain.model.UspException
 import com.uspcontroller.app.domain.model.WifiConfig
-import javax.inject.Inject
 
 /**
  * Use case that sends a USP Set message to update the Wi-Fi passphrase on the Agent.
@@ -13,7 +12,7 @@ import javax.inject.Inject
  *
  * Target parameter: Device.WiFi.AccessPoint.1.Security.KeyPassphrase
  */
-class SetWifiPassphraseUseCase @Inject constructor(
+class SetWifiPassphraseUseCase(
     private val repository: UspRepository
 ) {
 

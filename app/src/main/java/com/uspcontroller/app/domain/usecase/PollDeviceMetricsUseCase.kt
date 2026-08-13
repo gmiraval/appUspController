@@ -7,7 +7,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import javax.inject.Inject
 
 /**
  * Use case that periodically polls device metrics from the USP Agent.
@@ -21,7 +20,7 @@ import javax.inject.Inject
  * - Device.DeviceInfo.MemoryStatus.Free
  * - Device.WiFi.SSID.1.SSID
  */
-class PollDeviceMetricsUseCase @Inject constructor(
+class PollDeviceMetricsUseCase(
     private val repository: UspRepository
 ) {
 

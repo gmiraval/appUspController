@@ -24,8 +24,6 @@ import okio.ByteString
 import okio.ByteString.Companion.toByteString
 import usp_msg.Usp
 import java.util.concurrent.ConcurrentHashMap
-import javax.inject.Inject
-import javax.inject.Singleton
 import kotlin.math.min
 import kotlin.random.Random
 import kotlin.time.Duration
@@ -43,8 +41,7 @@ import kotlin.time.Duration.Companion.seconds
  * Thread safety: All state mutations happen through thread-safe flows and
  * ConcurrentHashMap. OkHttp callbacks are bridged to the provided [CoroutineScope].
  */
-@Singleton
-class WebSocketMtpClient @Inject constructor(
+class WebSocketMtpClient(
     private val okHttpClient: OkHttpClient,
     private val coroutineScope: CoroutineScope
 ) {

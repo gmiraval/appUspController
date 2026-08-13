@@ -5,8 +5,6 @@ import com.uspcontroller.app.data.protobuf.UspRecordWrapper
 import com.uspcontroller.app.data.protobuf.UspResponseParser
 import com.uspcontroller.app.data.transport.WebSocketMtpClient
 import com.uspcontroller.app.domain.model.UspException
-import javax.inject.Inject
-import javax.inject.Singleton
 
 /**
  * Repository that orchestrates USP message construction, transport, and response parsing.
@@ -17,8 +15,7 @@ import javax.inject.Singleton
  * @param mtpClient The WebSocket MTP client for sending/receiving USP Records.
  * @param controllerEid The Endpoint ID of this Controller (e.g., "os::usp-controller-android").
  */
-@Singleton
-class UspRepository @Inject constructor(
+class UspRepository(
     private val mtpClient: WebSocketMtpClient,
     private val controllerEid: String
 ) {
